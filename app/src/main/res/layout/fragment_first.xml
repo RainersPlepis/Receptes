@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nestedScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstFragment">
+
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="1"
+        android:background="#FAFAFA"
+        android:backgroundTint="#000000"
+        android:backgroundTintMode="multiply"
+        android:rotationX="0"
+        android:rotationY="0"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="11"
+        android:text="@string/login"
+        android:textColor="#0277BD"
+        app:layout_constraintEnd_toEndOf="@+id/apstiprParole_ievade"
+        app:layout_constraintTop_toTopOf="@+id/return_button" />
+
+    <Button
+        android:id="@+id/return_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:alpha="1"
+        android:background="#050505"
+        android:backgroundTint="#000000"
+        android:rotationX="0"
+        android:rotationY="0"
+        android:text="@string/atpaka"
+        android:textColor="#00838F"
+        android:textColorLink="@color/white"
+        app:iconTint="#000000"
+        app:layout_constraintEnd_toStartOf="@+id/login_button"
+        app:layout_constraintStart_toStartOf="@+id/apstiprParole_ievade"
+        app:layout_constraintTop_toBottomOf="@+id/apstiprParole_ievade"
+        app:rippleColor="#FDFDFD" />
+
+    <TextView
+        android:id="@+id/lietotajv_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/lietotajvards"
+        app:layout_constraintBottom_toTopOf="@+id/lietotajv_ievade"
+        app:layout_constraintStart_toStartOf="@+id/lietotajv_ievade" />
+
+    <EditText
+        android:id="@+id/parole_ievade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/ievadiet_paroli"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textColorHint="#8D6E63"
+        app:layout_constraintBottom_toTopOf="@+id/apstiprParole_textView"
+        app:layout_constraintEnd_toEndOf="@+id/lietotajv_ievade"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/lietotajv_ievade" />
+
+    <EditText
+        android:id="@+id/lietotajv_ievade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/ievadiet_lietotajvardu"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColorHint="#8D6E63"
+        app:layout_constraintBottom_toTopOf="@+id/parole_textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/apstiprParole_ievade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/apstipriniet_paroli"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textColorHint="#8D6E63"
+        app:layout_constraintEnd_toEndOf="@+id/parole_ievade"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/parole_ievade"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="319dp" />
+
+    <TextView
+        android:id="@+id/parole_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/parole"
+        app:layout_constraintBottom_toTopOf="@+id/parole_ievade"
+        app:layout_constraintStart_toStartOf="@+id/parole_ievade" />
+
+    <TextView
+        android:id="@+id/apstiprParole_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/apstiprinat_paroli"
+        app:layout_constraintBottom_toTopOf="@+id/apstiprParole_ievade"
+        app:layout_constraintStart_toStartOf="@+id/apstiprParole_ievade" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

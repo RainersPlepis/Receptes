@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nestedScrollView2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondFragment" >
+
+    <Button
+        android:id="@+id/login_button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="1"
+        android:background="#FAFAFA"
+        android:backgroundTint="#000000"
+        android:backgroundTintMode="multiply"
+        android:rotationX="0"
+        android:rotationY="0"
+        android:shadowColor="#000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="11"
+        android:text="Login"
+        app:layout_constraintEnd_toEndOf="@+id/parole_ievade2"
+        app:layout_constraintStart_toEndOf="@+id/return_button2"
+        app:layout_constraintTop_toTopOf="@+id/return_button2" />
+
+    <Button
+        android:id="@+id/return_button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="1"
+        android:background="#050505"
+        android:backgroundTint="#000000"
+        android:rotationX="0"
+        android:rotationY="0"
+        android:text="Atpakaļ"
+        android:textColorLink="#FFFFFF"
+        app:iconTint="#000000"
+        app:layout_constraintStart_toStartOf="@+id/parole_ievade2"
+        app:rippleColor="#FDFDFD"
+        tools:layout_editor_absoluteY="341dp" />
+
+    <TextView
+        android:id="@+id/lietotajv_textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Lietotājvārds"
+        app:layout_constraintBottom_toTopOf="@+id/lietotajv_ievade3"
+        app:layout_constraintStart_toStartOf="@+id/lietotajv_ievade3" />
+
+    <EditText
+        android:id="@+id/parole_ievade2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Ievadiet paroli"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/lietotajv_ievade3"
+        app:layout_constraintStart_toStartOf="@+id/lietotajv_ievade3"
+        tools:layout_editor_absoluteY="260dp" />
+
+    <EditText
+        android:id="@+id/lietotajv_ievade3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:hint="Ievadiet lietotājvārdu"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/parole_textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/parole_textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Parole"
+        app:layout_constraintBottom_toTopOf="@+id/parole_ievade2"
+        app:layout_constraintStart_toStartOf="@+id/parole_ievade2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
