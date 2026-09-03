@@ -57,14 +57,14 @@
     <Button
         android:id="@+id/par_mums"
         style="@style/Widget.AppCompat.Button"
-        android:textColor="@color/whiteText"
-        android:background="@color/buttonBackgroundFirstView"
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="372dp"
         android:layout_marginEnd="8dp"
+        android:background="@color/buttonBackgroundFirstView"
         android:text="@string/par_mums"
+        android:textColor="@color/whiteText"
         app:layout_constraintEnd_toStartOf="@+id/konts"
         app:layout_constraintStart_toEndOf="@+id/katalogs"
         app:layout_constraintTop_toBottomOf="@+id/nosaukums" />
