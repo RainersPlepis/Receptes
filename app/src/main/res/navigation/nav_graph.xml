@@ -3,26 +3,75 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/loginintro">
 
+    <!-- LOGDEC -->
+    <fragment
+        android:id="@+id/loginintro"
+        android:name="com.example.receptes_plepis_silins.Loginintro"
+        android:label="intro_login"
+        tools:layout="@layout/intro_login">
+
+        <action
+            android:id="@+id/action_Loginintro_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_Loginintro_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <!-- LOGIN -->
     <fragment
         android:id="@+id/FirstFragment"
         android:name="com.example.receptes_plepis_silins.FirstFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
-
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_FirstFragment_to_Loginintro"
+            app:destination="@id/loginintro" />
+        <action
+            android:id="@+id/action_FirstFragment_to_ReciepeBook"
+            app:destination="@id/ReciepeBook" />
     </fragment>
+    <!-- SIGNUP -->
     <fragment
         android:id="@+id/SecondFragment"
         android:name="com.example.receptes_plepis_silins.SecondFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
+        <action
+            android:id="@+id/action_SecondFragment_to_Loginintro"
+            app:destination="@id/loginintro" />
+        <action
+            android:id="@+id/action_SecondFragment_to_ReciepeBook"
+            app:destination="@id/ReciepeBook" />
+    </fragment>
+    <!-- INNER -->
+
+    <fragment
+        android:id="@+id/ReciepeBook"
+        android:name="com.example.receptes_plepis_silins.ReciepeBook"
+        android:label="ReciepeBook"
+        tools:layout="@layout/reciepe_book">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_ReciepeBook_to_Loginintro"
+            app:destination="@id/loginintro" />
+        <action
+            android:id="@+id/action_ReciepeBook_to_par_mums"
+            app:destination="@id/par_mums" />
+
     </fragment>
+
+    <fragment
+        android:id="@+id/par_mums"
+        android:name="com.example.receptes_plepis_silins.par_mums"
+        android:label="@string/par_mums"
+        tools:layout="@layout/par_mums">
+
+        <action
+            android:id="@+id/action_par_mums_to_ReciepeBook"
+            app:destination="@id/ReciepeBook" />
+
+    </fragment>
+
 </navigation>

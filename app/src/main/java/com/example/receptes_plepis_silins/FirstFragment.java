@@ -31,7 +31,10 @@ public class FirstFragment extends Fragment {
 
         binding.loginButton.setOnClickListener(v ->
                 NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment)
+                        .navigate(R.id.action_FirstFragment_to_ReciepeBook));
+        binding.returnButton.setOnClickListener(v ->
+                NavHostFragment.findNavController(FirstFragment.this)
+                        .navigate(R.id.action_FirstFragment_to_Loginintro)
         );
     }
 
