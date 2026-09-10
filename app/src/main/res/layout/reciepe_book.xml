@@ -1,134 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nestedScrollView3"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ReciepeBook">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/nosaukums"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="#9B2020"
-        android:fontFamily="cursive"
-        android:text="@string/lietotnes_nosaukums"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="VisualLintSystemUi" />
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
 
-    <Button
-        android:id="@+id/konts"
-        style="@style/Widget.AppCompat.Button"
-        android:textColor="@color/whiteText"
-        android:background="@color/buttonBackgroundFirstView"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/konts"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/par_mums"
-        app:layout_constraintTop_toBottomOf="@+id/nosaukums" />
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
 
-    <Button
-        android:id="@+id/katalogs"
-        style="@style/Widget.AppCompat.Button"
-        android:textColor="@color/whiteText"
-        android:background="@color/buttonBackgroundFirstView"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/katalog"
-        app:layout_constraintEnd_toStartOf="@+id/par_mums"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nosaukums" />
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
 
-    <Button
-        android:id="@+id/par_mums"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@color/buttonBackgroundFirstView"
-        android:text="@string/par_mums"
-        android:textColor="@color/whiteText"
-        app:layout_constraintEnd_toStartOf="@+id/konts"
-        app:layout_constraintStart_toEndOf="@+id/katalogs"
-        app:layout_constraintTop_toBottomOf="@+id/nosaukums" />
+            app:toolbarId="@+id/toolbar">
 
-    <Button
-        android:id="@+id/pievienot_recepti"
-        style="@style/Widget.AppCompat.Button"
-        android:textColor="@color/whiteText"
-        android:background="@color/buttonBackgroundSecondView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/pievienot_recepti"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="VisualLintButtonSize"/>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="180dp"
-        android:layout_height="200dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:src="@drawable/meatballs"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/katalogs" />
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"></androidx.appcompat.widget.Toolbar>
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="180dp"
-        android:layout_height="200dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:src="@drawable/spinach"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/konts" />
+            <include layout="@layout/reciepe_book_toolbar1" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="180dp"
-        android:layout_height="200dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="32dp"
-        android:src="@drawable/biryani"
-        app:layout_constraintEnd_toStartOf="@+id/imageView4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="475dp"
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="180dp"
-        android:layout_height="200dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="16dp"
-        android:src="@drawable/chilicon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/nestedScrollView3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ReciepeBook">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="180dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:src="@drawable/meatballs"
+                app:layout_constraintEnd_toStartOf="@+id/imageView2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="180dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/spinach"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="180dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="32dp"
+                android:src="@drawable/biryani"
+                app:layout_constraintEnd_toStartOf="@+id/imageView4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="180dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/chilicon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView3"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
