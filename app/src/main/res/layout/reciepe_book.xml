@@ -7,41 +7,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbar"
-
+    <com.google.android.material.appbar.CollapsingToolbarLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="4dp"
+        app:contentScrim="?attr/colorPrimary"
 
-        <com.google.android.material.appbar.CollapsingToolbarLayout
+        app:layout_scrollFlags="scroll|exitUntilCollapsed"
+        app:toolbarId="@+id/toolbar">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            android:layout_height="?attr/actionBarSize"></androidx.appcompat.widget.Toolbar>
 
-            app:toolbarId="@+id/toolbar">
-
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"></androidx.appcompat.widget.Toolbar>
-
-            <include layout="@layout/reciepe_book_toolbar1" />
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="475dp"
-
-
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+        <include layout="@layout/reciepe_book_toolbar1" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/nestedScrollView3"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="613dp"
             tools:context=".ReciepeBook">
 
             <ImageView
@@ -49,7 +35,7 @@
                 android:layout_width="180dp"
                 android:layout_height="200dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="100dp"
                 android:layout_marginEnd="32dp"
                 android:src="@drawable/meatballs"
                 app:layout_constraintEnd_toStartOf="@+id/imageView2"
@@ -61,7 +47,7 @@
                 android:layout_width="180dp"
                 android:layout_height="200dp"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="100dp"
                 android:layout_marginEnd="16dp"
                 android:src="@drawable/spinach"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -92,9 +78,48 @@
                 app:layout_constraintStart_toEndOf="@+id/imageView3"
                 app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <RatingBar
+                android:id="@+id/ratingBar2"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView3"
+                app:layout_constraintVertical_bias="0.0" />
 
-    </androidx.core.widget.NestedScrollView>
+            <RatingBar
+                android:id="@+id/ratingBar3"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView3"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <RatingBar
+                android:id="@+id/ratingBar4"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+            <RatingBar
+                android:id="@+id/ratingBar5"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.CollapsingToolbarLayout>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

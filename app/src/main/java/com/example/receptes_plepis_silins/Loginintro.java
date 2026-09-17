@@ -1,6 +1,5 @@
 package com.example.receptes_plepis_silins;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,8 +11,10 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.receptes_plepis_silins.databinding.IntroLoginBinding;
 
-public class Loginintro extends Activity {
+public class Loginintro extends Fragment {
     private IntroLoginBinding binding;
+
+    @Override
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
@@ -22,8 +23,9 @@ public class Loginintro extends Activity {
         return binding.getRoot();
     }
 
+    @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);// this is my 13th reason, why the fuck are you complaining?
+        super.onViewCreated(view, savedInstanceState);
 
         binding.LoginEnter.setOnClickListener(v ->
                 NavHostFragment.findNavController(Loginintro.this)
@@ -33,5 +35,11 @@ public class Loginintro extends Activity {
                 NavHostFragment.findNavController(Loginintro.this)
                         .navigate(R.id.action_Loginintro_to_SecondFragment)
         );
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 }
