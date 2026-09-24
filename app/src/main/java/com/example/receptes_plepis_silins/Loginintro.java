@@ -29,11 +29,11 @@ public class Loginintro extends Fragment {
 
         binding.LoginEnter.setOnClickListener(v ->
                 NavHostFragment.findNavController(Loginintro.this)
-                        .navigate(R.id.action_Loginintro_to_FirstFragment)
+                        .navigate(R.id.action_Loginintro_to_SecondFragment)
         );
         binding.RegisterEnter.setOnClickListener(v ->
                 NavHostFragment.findNavController(Loginintro.this)
-                        .navigate(R.id.action_Loginintro_to_SecondFragment)
+                        .navigate(R.id.action_Loginintro_to_FirstFragment)
         );
     }
 

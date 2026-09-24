@@ -7,10 +7,28 @@
     android:layout_height="match_parent"
     tools:context=".SecondFragment" >
 
+    <EditText
+        android:id="@+id/parole_ievade2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="48dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="Ievadiet paroli"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textColorHint="#00796B"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/parole_textView2"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
     <Button
         android:id="@+id/login_button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
         android:alpha="1"
         android:background="#FAFAFA"
         android:backgroundTint="#000000"
@@ -22,68 +40,65 @@
         android:shadowDy="1"
         android:shadowRadius="11"
         android:text="Login"
-        app:layout_constraintEnd_toEndOf="@+id/parole_ievade2"
+        android:textColor="#0277BD"
         app:layout_constraintStart_toEndOf="@+id/return_button2"
-        app:layout_constraintTop_toTopOf="@+id/return_button2" />
+        app:layout_constraintTop_toBottomOf="@+id/parole_ievade2"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/lietotajv_ievade3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="Ievadiet lietotājvārdu"
+        android:inputType="text"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lietotajv_textView2"
+        tools:ignore="Autofill,HardcodedText" />
+
+    <TextView
+        android:id="@+id/lietotajv_textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="224dp"
+        android:text="Lietotājvārds"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/return_button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="32dp"
         android:alpha="1"
         android:background="#050505"
         android:backgroundTint="#000000"
         android:rotationX="0"
         android:rotationY="0"
         android:text="Atpakaļ"
+        android:textColor="#00838F"
         android:textColorLink="#FFFFFF"
         app:iconTint="#000000"
-        app:layout_constraintStart_toStartOf="@+id/parole_ievade2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/parole_ievade2"
         app:rippleColor="#FDFDFD"
-        tools:layout_editor_absoluteY="341dp" />
-
-    <TextView
-        android:id="@+id/lietotajv_textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Lietotājvārds"
-        app:layout_constraintBottom_toTopOf="@+id/lietotajv_ievade3"
-        app:layout_constraintStart_toStartOf="@+id/lietotajv_ievade3" />
-
-    <EditText
-        android:id="@+id/parole_ievade2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Ievadiet paroli"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/lietotajv_ievade3"
-        app:layout_constraintStart_toStartOf="@+id/lietotajv_ievade3"
-        tools:layout_editor_absoluteY="260dp" />
-
-    <EditText
-        android:id="@+id/lietotajv_ievade3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:ems="10"
-        android:hint="Ievadiet lietotājvārdu"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/parole_textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.437"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:ignore="HardcodedText,MissingConstraints" />
 
     <TextView
         android:id="@+id/parole_textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="32dp"
         android:text="Parole"
-        app:layout_constraintBottom_toTopOf="@+id/parole_ievade2"
-        app:layout_constraintStart_toStartOf="@+id/parole_ievade2" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lietotajv_ievade3"
+        tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
