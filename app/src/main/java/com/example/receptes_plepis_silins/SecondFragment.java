@@ -47,7 +47,7 @@ public class SecondFragment extends Fragment {
             if (username.equals("admin") && password.equals("admin")) {
                 Toast.makeText(requireContext(), "Welcome admin", Toast.LENGTH_SHORT).show();
                 NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_ReciepeBook);
+                        .navigate(R.id.action_SecondFragment_to_AdminActivity);
                 return;
             }
 

@@ -44,6 +44,9 @@
         <action
             android:id="@+id/action_SecondFragment_to_ReciepeBook"
             app:destination="@id/ReciepeBook" />
+        <action
+            android:id="@+id/action_SecondFragment_to_AdminActivity"
+            app:destination="@id/AdminActivity" />
     </fragment>
     <!-- INNER -->
 
@@ -73,5 +76,11 @@
             app:destination="@id/ReciepeBook" />
 
     </fragment>
+
+    <activity
+        android:id="@+id/AdminActivity"
+        android:name="com.example.receptes_plepis_silins.AdminActivity"
+        android:label="AdminActivity"
+        tools:layout="@layout/activity_admin" />
 
 </navigation>

@@ -65,8 +65,8 @@ public class Register extends AppCompatActivity {
     }
     protected void onDestroy() {
         super.onDestroy();
-        /*if (db != null && db.isOpen()) {
+        if (db != null && db.isOpen()) {
             db.close();
-        }*/
+        }
     }
 }
