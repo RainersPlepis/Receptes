@@ -19,13 +19,13 @@ public class Register extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.fragment_first);
 
-        MyDbHelper dbHelper = new MyDbHelper(this, "login.db", null, 1);
+        //MyDbHelper dbHelper = new MyDbHelper(this, "login.db", null, 1);
 
         Button backButton = findViewById(R.id.return_button);
         backButton.setOnClickListener(v -> {
             Intent Intent = new Intent(Register.this, MainActivity.class);
-            startActivity(Intent);
-        });
+            startActivity(Intent);});
+
         Button registerButton = findViewById(R.id.register_button);
         registerButton.setOnClickListener(v -> {
             EditText username = findViewById(R.id.lietotajv_ievade);
@@ -34,23 +34,21 @@ public class Register extends AppCompatActivity {
             String passwordText = password.getText().toString();
             EditText confirmPassword = findViewById(R.id.apstiprParole_ievade);
             String confirmPasswordText = confirmPassword.getText().toString();
+
             if (passwordText.equals(confirmPasswordText)) {
                 Intent Intent = new Intent(Register.this, MainActivity.class);
-                startActivity(Intent);
-            }
+                startActivity(Intent);}
             if(usernameText.isEmpty() && passwordText.isEmpty() && confirmPasswordText.isEmpty()){
                 Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
-                return;
-            }
+                return;}
             if(!passwordText.equals(confirmPasswordText)){
                 Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show();
-                return;
-            }
+                return;}
 
             ContentValues values = new ContentValues();
             values.put("username", usernameText);
             values.put("password", passwordText);
-            values.put("confirmPassword", confirmPasswordText);
+            //values.put("confirmPassword", confirmPasswordText);
 
             long newRowId = db.insert("users", null, values);
 
@@ -59,14 +57,11 @@ public class Register extends AppCompatActivity {
             } else {
                 Toast.makeText(this, "Registration successful", Toast.LENGTH_SHORT).show();
                 Intent Intent = new Intent(Register.this, MainActivity.class);
-                startActivity(Intent);
-            }
+                startActivity(Intent);}
         });
     }
     protected void onDestroy() {
         super.onDestroy();
-        if (db != null && db.isOpen()) {
-            db.close();
-        }
+        if (db != null && db.isOpen()) {db.close();}
     }
 }
