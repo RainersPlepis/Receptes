@@ -22,12 +22,14 @@ public class MyDbHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS users");
         onCreate(db);}
-    public void Drop() {this.Drop();}
+    public void Drop() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.replaceOrThrow(null,null,null);}
     public boolean getUser(String username, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM users WHERE username = ? AND password = ?", new String[]{username, password});
         boolean exists = cursor.getCount() > 0;
-        cursor.close();
+        //cursor.close();
         return exists;}
     public boolean insertUser(User user) {
         if (user == null) return false;
