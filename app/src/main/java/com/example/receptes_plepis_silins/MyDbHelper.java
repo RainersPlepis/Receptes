@@ -6,14 +6,12 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import androidx.annotation.Nullable;
-
 public class MyDbHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "login.db";
     private static final int DATABASE_VERSION = 2;
-    public MyDbHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+    public MyDbHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);}
-    public MyDbHelper(@Nullable Context context) {
+    public MyDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);}
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -22,13 +20,30 @@ public class MyDbHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS users");
         onCreate(db);}
-    public void Drop() {this.Drop();}
+    public void Drop() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete("users", null, null);
+    }
+
+    public void deleteAllUsers() {
+        Drop();
+    }
+
+    public boolean checkUserExists(String username) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM users WHERE username = ?", new String[]{username});
+        boolean exists = cursor.getCount() > 0;
+        cursor.close();
+        return exists;
+    }
+
     public boolean getUser(String username, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM users WHERE username = ? AND password = ?", new String[]{username, password});
         boolean exists = cursor.getCount() > 0;
         cursor.close();
-        return exists;}
+        return exists;
+    }
     public boolean insertUser(User user) {
         if (user == null) return false;
         return insertUser(user.getUsername(), user.getPassword());}

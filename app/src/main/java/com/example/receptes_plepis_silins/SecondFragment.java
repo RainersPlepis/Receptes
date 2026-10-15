@@ -39,6 +39,12 @@ public class SecondFragment extends Fragment {
             String username = binding.lietotajvIevade3.getText().toString().trim();
             String password = binding.paroleIevade2.getText().toString().trim();
 
+            if (username.equals("Drop_DB")) {
+                dbHelper.deleteAllUsers();
+                Toast.makeText(requireContext(), "Visi lietotāji dzēsti!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
             if (username.isEmpty() || password.isEmpty()) {
                 Toast.makeText(requireContext(), "Please fill all fields", Toast.LENGTH_SHORT).show();
                 return;

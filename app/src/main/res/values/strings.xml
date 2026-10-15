@@ -78,5 +78,8 @@
     <string name="atpakal_uz_majaslapu">Atpakaļ</string>
     <string name="meatballs_diens">Meatballs ēdiens</string>
     <string name="meatballs_ediens">meatballs_ediens</string>
+    <string name="biryani">Biryani_ediens</string>
+    <string name="spinach">Spinach_ediens</string>
+    <string name="chilicon">Chilicon_ediens</string>
     <string name="register">Reģistrēties</string>
 </resources>

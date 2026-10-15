@@ -37,15 +37,18 @@ public class FirstFragment extends Fragment {
             String username = binding.lietotajvIevade.getText().toString().trim();
             String password = binding.paroleIevade.getText().toString().trim();
             String confirmPassword = binding.apstiprParoleIevade.getText().toString().trim();
-            if (username.equals("Drop_Data")){
-                dbHelper.Drop();
-                return;}
+            
             if (username.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
                 Toast.makeText(requireContext(), "Lūdzu aizpildiet visas tabulas!", Toast.LENGTH_SHORT).show();
                 return;}// exits listener
             if (!password.equals(confirmPassword)) {
                 Toast.makeText(requireContext(), "Paroles nesakrīt!", Toast.LENGTH_SHORT).show();
                 return;}// exits listener
+
+            if (dbHelper.checkUserExists(username)) {
+                Toast.makeText(requireContext(), "Lietotājs jau eksistē!", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
             User user = new User(username,password);
 
